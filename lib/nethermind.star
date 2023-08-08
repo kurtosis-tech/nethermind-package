@@ -15,9 +15,8 @@ GENESIS_DATA_GENERATION_TIME = 5 * time.second
 NODE_STARTUP_TIME = 5 * time.second
 
 
-def run(plan, network_params, el_genesis_data, image = CLIENT_IMAGE, extra_params = [], existing_el_clients = []):
+def run(plan, el_genesis_data, image = CLIENT_IMAGE, extra_params = [], existing_el_clients = []):
     launcher = nethermind.new_nethermind_launcher(
-        network_params["network_id"],
         el_genesis_data,
     )
     service_name = "{0}{1}".format(CLIENT_SERVICE_NAME_PREFIX, 0)
